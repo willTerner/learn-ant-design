@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      :root {
+        --my-color: black;
+      }
+      #test {
+        border: 1px solid var(--my-color);
+      }
+      #test:hover {
+        --my-color: red;
+      }
+      #testDiv {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      const onClick = () => {
+        console.log("hello");
+      };
+    </script>
+    <button id="test" onclick="onClick()">test</button>
+    <div id="testDiv"></div>
+    <script>
+      const testDiv = document.querySelector("#testDiv");
+      const newNode = document.createElement("button");
+      newNode.innerHTML = "button";
+      testDiv.append(newNode);
+      console.log(testDiv.lastChild);
+    </script>
+  </body>
+</html>
