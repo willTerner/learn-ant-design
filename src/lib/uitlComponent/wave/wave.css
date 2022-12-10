@@ -1,0 +1,25 @@
+[should-have-wave-effect=true]::after {
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   display: block;
+   opacity: 0.2;
+   animation: myFadeEffect 2s cubic-bezier(0.08, 0.82, 0.17, 1),
+              myWaveEffect 0.4s cubic-bezier(0.08, 0.82, 0.17, 1);
+   animation-fill-mode: forwards;
+   content: "";
+   pointer-events: none;
+ }
+ 
+ @keyframes myWaveEffect {
+   100% {
+     box-shadow: 0 0  2px 6px var(--var-wave-color);
+   }
+ }
+ @keyframes myFadeEffect {
+   100% {
+     opacity: 0;
+   }
+ }

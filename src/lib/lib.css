@@ -1,0 +1,5 @@
+@import "./uitlComponent/wave/wave.css";
+
+:root {
+   --var-wave-color:  #1890ff
+}

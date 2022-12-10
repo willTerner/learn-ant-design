@@ -1,42 +1,32 @@
-import classNames from "classnames";
+import { Button } from "antd";
 import React, {
-  useState,
-  useEffect,
-  useRef,
-  useLayoutEffect,
-  useCallback,
 } from "react";
 import "./App.css";
-import CSSMotionDemo from "./CSSMotionDemo";
-import AntDemo from "./AntDemo";
-import { Button } from "antd";
-import "antd/dist/antd.min.css";
+import Wave from "./lib/uitlComponent/wave/Wave";
 
-function useTest(callback: () => void) {
-  const internalCallback = useCallback(() => {
-    callback();
-  }, []);
-  internalCallback();
-}
 
 interface IProp {
-  children: React.ReactElement<any, any>;
+  children?: React.ReactElement<any, any>[];
 }
 
-const Test: React.FC<IProp> = function Test(props) {
-  return props.children;
-};
+const Test: React.FC<IProp> = (props) => {
+  return (
+    <Wave>
+      <button className="test-style">test</button>
+    </Wave>
+  );
+}
 
-const set = new Set();
 
 function App() {
-  const testRef = useRef<any>();
   return (
     <div>
-      <Test ref={testRef}>
-        <div>test</div>
+      <Test >
       </Test>
       {/* <AntDemo></AntDemo> */}
+      <div style={{margin: 20}}>
+        <Button>test</Button>
+      </div>
     </div>
   );
 }

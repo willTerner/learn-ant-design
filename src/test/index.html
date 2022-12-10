@@ -16,6 +16,7 @@
         --my-color: red;
       }
       #testDiv {
+        display: none;
         position: relative;
         width: 200px;
         height: 200px;
@@ -33,10 +34,7 @@
     <div id="testDiv"></div>
     <script>
       const testDiv = document.querySelector("#testDiv");
-      const newNode = document.createElement("button");
-      newNode.innerHTML = "button";
-      testDiv.append(newNode);
-      console.log(testDiv.lastChild);
+      console.log(testDiv, document.body.children);
     </script>
   </body>
 </html>
